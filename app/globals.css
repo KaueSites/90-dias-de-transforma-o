@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cores principais */
+:root {
+  --primary-green: #16a34a;
+  --dark-green: #15803d;
+  --light-green: #f0fdf4;
+  --primary-yellow: #facc15;
+  --light-yellow: #fefce8;
+  --urgent-red: #dc2626;
+  --trust-blue: #2563eb;
+}
+
+/* Estilos de base */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Componentes customizados */
+@layer components {
+  /* Estilos de botões */
+  .btn-primary {
+    @apply bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  /* Cards com hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Gradientes personalizados */
+  .gradient-green {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  }
+
+  .gradient-yellow {
+    background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+  }
+
+  /* Componentes de alta conversão */
+  .cta-primary {
+    @apply bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl;
+  }
+
+  .cta-urgent {
+    @apply bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl animate-pulse;
+  }
+
+  .cta-final {
+    @apply bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-6 px-12 rounded-full transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-3xl;
+  }
+
+  .conversion-card {
+    @apply bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-green-300;
+  }
+
+  .urgency-bar {
+    @apply bg-red-600 text-white py-2 px-4 text-center font-bold text-sm animate-pulse;
+  }
+
+  .price-highlight {
+    @apply text-5xl font-bold text-green-600 drop-shadow-lg;
+  }
+
+  .price-old {
+    @apply text-xl text-gray-500 line-through opacity-75;
+  }
+
+  .social-proof {
+    @apply bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg;
+  }
+
+  .guarantee-badge {
+    @apply bg-green-100 border-2 border-green-500 p-6 rounded-2xl text-center;
+  }
+}
+
+/* Utilitários */
+@layer utilities {
+  /* Animações personalizadas */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  /* Responsividade customizada */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Texto responsivo */
+  .text-responsive-xl {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .text-responsive-lg {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  /* Animações de conversão */
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+
+  .animate-pulse-fast {
+    animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  /* Gradientes persuasivos */
+  .gradient-success {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  }
+
+  .gradient-urgency {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  }
+
+  .gradient-trust {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  }
+}
+
+/* Keyframes para animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+  }
+}
+
+/* Customização de scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #15803d;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  /* Ajustes para mobile */
+  .hero-title {
+    @apply text-3xl;
+  }
+
+  .hero-subtitle {
+    @apply text-lg;
+  }
+
+  .section-padding {
+    @apply py-12;
+  }
+
+  .hero-title-mobile {
+    @apply text-3xl leading-tight;
+  }
+
+  .cta-mobile {
+    @apply w-full max-w-sm mx-auto text-lg py-4;
+  }
+
+  .price-mobile {
+    @apply text-4xl;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Ajustes para tablet */
+  .hero-title {
+    @apply text-4xl;
+  }
+
+  .hero-subtitle {
+    @apply text-xl;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* Ajustes para desktop */
+  .hero-title {
+    @apply text-6xl;
+  }
+
+  .hero-subtitle {
+    @apply text-2xl;
+  }
+}
+
+/* Estilos para impressão */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .animate-pulse,
+  .animate-bounce {
+    display: none !important;
+  }
+}
+
+/* Estilos para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-pulse,
+  .animate-bounce,
+  .animate-shake {
+    animation: none;
+  }
+
+  .transform {
+    transform: none !important;
+  }
+}
+
+/* Focus states para acessibilidade */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+  outline: 3px solid #facc15;
+  outline-offset: 2px;
+}
+
+/* Estilos para modo escuro (opcional) */
+@media (prefers-color-scheme: dark) {
+  /* Adicione estilos de modo escuro aqui se necessário */
+}
+
+/* Estilos para elementos de conversão específicos */
+.countdown-timer {
+  @apply bg-red-600 text-white p-4 rounded-lg text-center font-bold;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.testimonial-highlight {
+  @apply bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-2xl;
+}
+
+.bonus-card {
+  @apply bg-white border-2 border-yellow-300 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105;
+}
+
+/* Estilos para loading states */
+.loading-button {
+  @apply opacity-75 cursor-not-allowed;
+}
+
+.loading-button::after {
+  content: "";
+  @apply inline-block w-4 h-4 ml-2 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
